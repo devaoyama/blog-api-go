@@ -1,11 +1,13 @@
 package repository
 
-import "blog-api/domain"
+import (
+	"blog-api/domain/entity"
+)
 
 type UserRepository interface {
-	FindAll() ([]domain.User, error)
-	Create(user *domain.User) (*domain.User, error)
-	Find(id int) (*domain.User, error)
-	Update(user *domain.User) (*domain.User, error)
+	FindAll() ([]entity.User, error)
+	Create(user *entity.User) (*entity.User, error)
+	Find(id int) (*entity.User, error)
+	Update(user *entity.User) (*entity.User, error)
 	Delete(id int) error
 }

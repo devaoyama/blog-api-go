@@ -1,13 +1,13 @@
 package repository
 
 import (
-	"blog-api/domain"
+	"blog-api/domain/entity"
 )
 
 type ArticleRepository interface {
-	FindAll() ([]domain.Article, error)
-	Create(article *domain.Article) (*domain.Article, error)
-	Find(id int) (*domain.Article, error)
-	Update(article *domain.Article) (*domain.Article, error)
+	FindAll() ([]entity.Article, error)
+	Create(article *entity.Article) (*entity.Article, error)
+	Find(id int) (*entity.Article, error)
+	Update(article *entity.Article) (*entity.Article, error)
 	Delete(id int) error
 }
