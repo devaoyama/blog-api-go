@@ -6,6 +6,9 @@ import (
 
 type User struct {
 	gorm.Model
-	Name     string
-	Articles []Article
+	Email         string
+	Name          string
+	Password      string
+	PlainPassword string `gorm:"-"`
+	Articles      []Article
 }

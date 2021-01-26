@@ -40,6 +40,12 @@ func (up *userPersistence) Find(id int) (*entity.User, error) {
 	return user, nil
 }
 
+func (up *userPersistence) FindByEmail(email string) (*entity.User, error) {
+	user := &entity.User{}
+	result := up.Db.Where("email", email).First(user)
+	return user, result.Error
+}
+
 func (up *userPersistence) Update(user *entity.User) (*entity.User, error) {
 	result := up.Db.Save(user)
 	if err := result.Error; err != nil {

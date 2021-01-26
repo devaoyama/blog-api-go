@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"blog-api/domain/entity"
 	"blog-api/usecase"
 	"github.com/labstack/echo/v4"
 	"net/http"
@@ -13,6 +14,28 @@ type UserHandler struct {
 
 func NewUserHandler(userUseCase usecase.UserUseCase) UserHandler {
 	return UserHandler{userUseCase: userUseCase}
+}
+
+func (h *UserHandler) SignUp(c echo.Context) error {
+	var user entity.User
+	err := c.Bind(&user)
+	if err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
+
+	token, err := h.userUseCase.SignUp(&user)
+	if err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
+	return c.String(http.StatusOK, token)
+}
+
+func (h *UserHandler) Login(c echo.Context) error {
+	token, err := h.userUseCase.Login(c.FormValue("email"), c.FormValue("password"))
+	if err != nil {
+		return echo.NewHTTPError(http.StatusUnauthorized)
+	}
+	return c.String(http.StatusOK, token)
 }
 
 func (h *UserHandler) GetAllUser(c echo.Context) error {
