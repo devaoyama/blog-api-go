@@ -15,6 +15,7 @@ func main() {
 	}
 
 	userHandler := wire.InitUserAPI(db)
+	articleHandler := wire.InitArticleAPI(db)
 
 	e := echo.New()
 	jwtConfig := middleware.JWTConfig{
@@ -27,8 +28,15 @@ func main() {
 
 	// users
 	u := e.Group("/users")
-	u.GET("/", userHandler.GetAllUser)
+	u.GET("", userHandler.GetAllUser)
 	u.GET("/:id", userHandler.GetUser, middleware.JWTWithConfig(jwtConfig))
+
+	// articles
+	a := e.Group("/articles")
+	a.GET("", articleHandler.GetAllArticle)
+	a.GET("/:id", articleHandler.GetArticleById, middleware.JWTWithConfig(jwtConfig))
+	a.POST("", articleHandler.PostArticle, middleware.JWTWithConfig(jwtConfig))
+	a.PUT("/:id", articleHandler.UpdateArticle, middleware.JWTWithConfig(jwtConfig))
 
 	e.Logger.Fatal(e.Start(":8000"))
 }

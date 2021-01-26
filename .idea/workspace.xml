@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19843931-f4d4-46ef-8620-e04978fa76f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/handler/article.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/entity/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/entity/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/repository/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/repository/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/persistence/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/persistence/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usecase/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wire/wire.go" beforeDir="false" afterPath="$PROJECT_DIR$/wire/wire.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

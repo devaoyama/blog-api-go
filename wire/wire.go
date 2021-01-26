@@ -12,3 +12,9 @@ func InitUserAPI(db *gorm.DB) handler.UserHandler {
 	userUseCase := usecase.NewUserUseCase(userRepository)
 	return handler.NewUserHandler(userUseCase)
 }
+
+func InitArticleAPI(db *gorm.DB) handler.ArticleHandler {
+	articleRepository := persistence.NewArticlePersistence(db)
+	articleUseCase := usecase.NewArticleUseCase(articleRepository)
+	return handler.NewArticleHandler(articleUseCase)
+}
